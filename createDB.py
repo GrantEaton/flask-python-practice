@@ -1,3 +1,0 @@
-import main
-
-db = DB()

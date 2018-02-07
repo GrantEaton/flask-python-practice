@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 db = Db(); 
 
-
 if __name__ == "__main__":
     print "Run using `Flask run` instead."    
 
