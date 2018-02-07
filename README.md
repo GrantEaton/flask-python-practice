@@ -1,7 +1,7 @@
 # flask-python-practice
 Just some practice with Python, Flask, Postgresql, etc. Getting to know the environment. Please edit readme if I missed any steps. Add useful commands. 
 
-# setup
+# Setup
 1. install postgresql `brew install postgresql`
 ### DB
 Note: im going to work on automating this setup, but requirements.txt wasnt working with `pip install` for me.
@@ -22,9 +22,12 @@ Note: im going to work on automating this setup, but requirements.txt wasnt work
 2. set default flask file `export FLASK_APP=hello.py`
 
 ### Run
-`flask run`
+* `flask run`
+* go to http://127.0.0.1:5000/
+you should see text on the page. If not, something went wrong. Try rerunning `./createDB.bash` or check permissions to story.
+The text on the page is all the entries in the story column of the story table. If you then use postman or something similar, you should be able to add text to the story using a POST request to http://127.0.0.1:5000/publish. If these both work, everything is functioning properly.
 
-# commands
+# Commands
 List of useful commands
 ### DB
 * show table schema: `\d+ tablename`
