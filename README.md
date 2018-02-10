@@ -21,6 +21,8 @@ Note: im going to work on automating this setup, but requirements.txt wasnt work
 1. install Flask `pip install flask`
 2. set default flask file `export FLASK_APP=hello.py`
 
+## Other Dependencies
+1. read yaml files `pip install pyyaml`
 ### Run
 * `flask run`
 * go to http://127.0.0.1:5000/
