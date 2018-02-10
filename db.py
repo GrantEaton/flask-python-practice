@@ -9,16 +9,20 @@ class Db():
         bd_identifier (string): the identifier used in the .creds.yml file to group credentials
     """
     def __init__(self, db_name='sfmaps', db_identifier='AWS'):
-        conf = yaml.load(open('.creds.yml'))
-        host = conf[db_identifier]['HOST']
-        port = conf[db_identifier]['PORT']
-        user = conf[db_identifier]['USER']
-        password = conf[db_identifier]['PASSWORD']
+        try: 
+            conf = yaml.load(open('.creds.yml'))
+            host = conf[db_identifier]['HOST']
+            port = conf[db_identifier]['PORT']
+            user = conf[db_identifier]['USER']
+            password = conf[db_identifier]['PASSWORD']
 
-        print 'connecting to ',db_identifier, 'db:', db_name, 'with role:', user 
-        conn_string = "host="+host+" port="+port+" dbname=" +db_name+" user="+user+" password="+password
-        self.conn = psycopg2.connect(conn_string)
-        self.cur = self.conn.cursor()
+            print 'connecting to ',db_identifier, 'db:', db_name, 'with role:', user 
+            conn_string = "host="+host+" port="+port+" dbname=" +db_name+" user="+user+" password="+password
+            self.conn = psycopg2.connect(conn_string)
+            self.cur = self.conn.cursor()
+        except: 
+            raise Exception("ERROR: either no .creds.yml file or failure connecting to db. Check db.py")
+
     """ 
     Queries the db.
     params:
