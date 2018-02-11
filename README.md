@@ -10,7 +10,9 @@ Just some practice with Python, Flask, Postgresql, etc. Getting to know the envi
 3. read yaml files `pip install pyyaml`
 
 ### DB
-The database is setup through AWS. In order to connect to it, you need to provide four things in a file named `.creds.yml`. 
+Our database is setup through AWS. If you need to make your own, follow [these instructions](http://duspviz.mit.edu/tutorials/intro-postgis.php) to learn how to set up postgis on AWS. Also check out "DB Setup" below. 
+
+In order to connect to the AWS db, you need to provide four things in a file named `.creds.yml`. 
 The file should be formatted like:
 ```
  AWS:
@@ -19,7 +21,7 @@ The file should be formatted like:
       USER:       '<username>'
       PASSWORD:   '<password>'
 ```
-When run the app, you should be automatically connected.
+Assuming you have an AWS hen run the app, you should be automatically connected.
 
 ### Other
 1. set default flask file `export FLASK_APP=hello.py`
