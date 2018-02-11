@@ -14,8 +14,8 @@ The database is setup through AWS. In order to connect to it, you need to provid
 The file should be formatted like:
 ```
  AWS:
-      HOST:       '<host, aka endpoint>'
-      PORT:       '<port'
+      HOST:       '<host aka endpoint>'
+      PORT:       '<port>'
       USER:       '<username>'
       PASSWORD:   '<password>'
 ```
