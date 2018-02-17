@@ -8,7 +8,7 @@ class Db():
         db_name (string): name of db to connect
         bd_identifier (string): the identifier used in the .creds.yml file to group credentials
     """
-    def __init__(self, db_name='sfmaps', db_identifier='AWS'):
+    def __init__(self, db_name='maps', db_identifier='AWS'):
         try: 
             conf = yaml.load(open('.creds.yml'))
             host = conf[db_identifier]['HOST']
