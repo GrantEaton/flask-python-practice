@@ -32,12 +32,6 @@ class Db():
     def query(self, query, values = None):
         self.cur.execute(query, values)
 
-    """
-    Custom func for story. Delete after db re-purpose for postgis mapping
-    """
-    def insert_story(self, values = None): 
-        query = 'INSERT into story(story, name) values(%s, %s)'
-        db.query(query, values)
 
     def commit(self):
         self.conn.commit()
