@@ -6,32 +6,26 @@ import pprint
 
 app = Flask(__name__)
 
-db = Db(); 
+db = Db()
 
 if __name__ == "__main__":
     print "Run using `Flask run` instead."    
 
-def get_story():
-    db.query("SELECT * from story;");
-    records = db.fetch()
-    return records
+@app.route("/api/map")
+def map():
+    print "Returns map data as GeoJSON feature collection"
 
-""" Routing Stuff """
-@app.route('/')
-def display_story():
-    story = ''
-    for post in get_story():
-        story += post[1]
-    return story
+@app.route("/api/streets")
+def streets():
+    print "Returns streets as GeoJSON feature collection"
 
-@app.route('/publish', methods=['GET', 'POST'])
-def add_to_story():
-    if request.method == 'POST':
-        addition = request.form['addition']
-        db.insert_story((addition, 'Grant'))
-        db.commit()
-        return '200'
-    else:
-        return '400'
+@app.route("/api/arteries")
+def arteries():
+    print "Returns arteries as GeoJSON feature collection"
+
+@app.route("/api/neighborhoods")
+def neighborhoods():
+    print "Returns neighborhoods as GeoJSON feature collection"
+
 
 
